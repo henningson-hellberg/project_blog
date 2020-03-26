@@ -24,7 +24,7 @@
                   , $db_password);
     $db->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
 
-    echo "<h2>Connected Successfully</h2>";
+    // echo "<h2>Connected Successfully</h2>";
     
   } catch(PDOException $e){
     echo "<h2>Error: " .$e->getMessage(). "</h2";
