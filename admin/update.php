@@ -24,8 +24,8 @@ if(isset($_GET['id'])){
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
   print_r($_POST);
-  $name = htmlspecialchars($_POST['name']);
-  $tel = htmlspecialchars($_POST['tel']);
+  $title = htmlspecialchars($_POST['title']);
+  $text = htmlspecialchars($_POST['text']);
   $id = htmlspecialchars($_GET['id']);
 
   $sql = "UPDATE blog_posts
@@ -39,13 +39,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $stmt->execute();
   header('Location: index.php');
-
-
 }
 
 ?>
-
-
 
 <form action="#" method="POST">
   <div>
@@ -57,6 +53,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div>
       <input type="submit" value="Update">
+    </div>
+    <div>
+      <button class="exit-update">
+        <a href="index.php">Avbryt</a>
+      </button>
     </div>
   </div>
 

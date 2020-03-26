@@ -3,12 +3,7 @@ function deleteTodo (id) {
   if(confirm("Are you sure you want to delete this post?")==true) {
     window.location = `delete.php?id=${id}`;
   }
-} 
-function update (id) {
-  if(confirm("Are you sure you want to delete this post?")==true) {
-    window.location = `index.php?id=${id}`;
-  }
-} 
+}
 </script>
 
 <?php
@@ -37,7 +32,9 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
           <td>$text<td>
           <td>$date<td>
           <td>
-          <input type='button' value='Update' onclick='return update(".$id.")'/>
+          <button class='edit-btn'>
+            <a href='index.php?id=$id'>Edit</a>
+          </button>
           <input type='button' value='Delete' onclick='return deleteTodo(".$id.")'/>
           </td>
         <tr>";
