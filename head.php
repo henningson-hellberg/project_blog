@@ -6,5 +6,7 @@
   <title>Lilla bloggen</title>
 </head>
 <body>
+  <header>
   <h1>Välkommen till bloggen</h1>
+  </header>
   
