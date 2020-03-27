@@ -15,23 +15,23 @@
    
    require_once "db.php";
 
-   $sql = "SELECT * FROM blog_images";
-   $stmt = $db->prepare($sql);
-   $stmt->execute();
+  //  $sql = "SELECT * FROM blog_images";
+  //  $stmt = $db->prepare($sql);
+  //  $stmt->execute();
 
-   $radioImgs = "";
+  //  $radioImgs = "";
 
-   if ($stmt->rowCount() !== 0) {
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
-      $id = htmlspecialchars($row['id']);
-      $image = htmlspecialchars($row['image']);
+  //  if ($stmt->rowCount() !== 0) {
+  //   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+  //     $id = htmlspecialchars($row['id']);
+  //     $image = htmlspecialchars($row['image']);
   
-      $radioImgs .= "<input type='radio' id='$id' name='image' value='$id'>
-                     <label for='$id'>
-                      <img src='$image' class='thumbnails'>
-                     </label>";
-     endwhile;
-  }
+  //     $radioImgs .= "<input type='radio' id='$id' name='image' value='$id'>
+  //                    <label for='$id'>
+  //                     <img src='$image' class='thumbnails'>
+  //                    </label>";
+  //    endwhile;
+  // }
 
 
    //Hantera data som skickas via formulär
@@ -69,7 +69,7 @@
             <input type="text" name="title" placeholder="Title" required>
           </div>
           <div class="admin__form__image">
-            <?php echo $radioImgs ?>
+            <?php require_once "get_images.php";?>
           </div>
           <!-- <button class="button add-img">Add image</button>
           <input type="hidden" name="chosen-img"> -->

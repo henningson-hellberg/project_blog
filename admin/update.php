@@ -48,6 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="admin__form__title">
         <input type="text" name="title" placeholder="Title" value="<?php echo $title ?>">
       </div>
+      <div class="admin__form__image">
+          <?php require_once "get_images.php";?>
+      </div>
       <div class="admin__form__textArea">
         <textarea name="text" id="text" cols="30" rows="10"><?php echo $text ?></textarea>
       </div>
