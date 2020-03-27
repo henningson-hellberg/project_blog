@@ -39,7 +39,7 @@
    endif;
 ?>  
     <div class="admin_card">
-      <h1>Handle your Posts</h1>
+      <h1>halde</h1>
       <form class="admin__form" action="index.php" method="POST">
         <div>
           <div class="admin__form__title">
