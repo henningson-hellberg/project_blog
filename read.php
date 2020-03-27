@@ -8,17 +8,20 @@ $stmt->execute();
 $posts = "<section class='posts-section'>";
 
 
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $title = htmlspecialchars($row['title']);
   $date = htmlspecialchars($row['date']);
   $inputText = htmlspecialchars($row['text']);
   $outputText = str_replace("<br />", "</p>\n<p>", nl2br($inputText));
   $outputText = "<p>" . $outputText . "</p>";
-
+  $image = true;
 
   $posts .="<div class='post'>
-             <h2 class='post__title'>$title</h2>
-             <span class='post__date'>$date</span>
+             <h2 class='post__title'>$title</h2>";
+
+             $image ? $posts.= "<div>heeej</div>" :null;
+
+            $posts.= "<span class='post__date'>$date</span>
              $outputText";
               
 
@@ -27,4 +30,3 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
 endwhile;
 $posts .= "</section>";
 echo $posts;
-?>
