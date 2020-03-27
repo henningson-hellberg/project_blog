@@ -23,10 +23,11 @@
 
    if ($stmt->rowCount() !== 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+      $id = htmlspecialchars($row['id']);
       $image = htmlspecialchars($row['image']);
   
-      $radioImgs .= "<input type='radio' id='$image' name='image' value='$image'>
-                     <label for='$image'>
+      $radioImgs .= "<input type='radio' id='$id' name='image' value='$id'>
+                     <label for='$id'>
                       <img src='$image' class='thumbnails'>
                      </label>";
      endwhile;
@@ -49,7 +50,7 @@
 
     //Binda parametrar
     $title = htmlspecialchars($_POST['title']);
-    $image = $_POST['image'];
+    $image = htmlspecialchars($_POST['image']);
     $text = htmlspecialchars($_POST['text']);
     $stmt->bindParam(':title', $title);
     $stmt->bindParam(':image', $image);
