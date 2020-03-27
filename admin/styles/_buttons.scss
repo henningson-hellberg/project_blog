@@ -1,0 +1,41 @@
+.button {
+  min-width: 60px;
+  height: 40px;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  background-color: rgba(22, 14, 14, 0.899);
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+  a {
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.abort {
+  &:hover {
+    background-color: rgba(184, 29, 29, 0.728);
+  }
+}
+.edit {
+  &:hover {
+    background-color: rgba(233, 142, 31, 0.728);
+  }
+}
+.submit {
+  margin-right: 5px;
+  &:hover {
+    background-color: rgba(38, 179, 73, 0.728);
+  }
+}

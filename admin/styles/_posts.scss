@@ -1,0 +1,22 @@
+.posts {
+  table {
+    border: none;
+    text-align: center;
+    th {
+      background-color: #111812;
+      color: white;
+      min-width: 50px;
+    }
+    td {
+      height: 80px;
+      min-width: 60px;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+}

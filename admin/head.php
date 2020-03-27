@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloggen--Admin</title>
+  <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-<h1>Administrera inlägg</h1>
+  <section class="header">I AM A HEADERERRER</section>
+<section class="admin">

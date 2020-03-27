@@ -1,0 +1,26 @@
+.admin {
+  &__form {
+    margin-bottom: 7px;
+    &__buttons {
+      display: flex;
+    }
+    &__textArea {
+      display: flex;
+      height: 300px;
+      width: 600px;
+      textarea {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+    &__title {
+      display: flex;
+      height: 40px;
+      width: 300px;
+      margin-bottom: 20px;
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
