@@ -17,11 +17,11 @@ echo "<section class='admin_card posts'>";
 echo "<h2 class='posts__header'> Posts </h2>";
 echo "<table cellpadding='0' cellspacing='0'>";
 echo "<tr>
-        <th>Id<th>
-        <th>Title<th>
-        <th>Text<th>
-        <th>Datum<th>
-      <tr>";
+        <th>Id</th>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Datum</th>
+      </tr>";
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $id = htmlspecialchars($row['id']);
@@ -31,17 +31,17 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
 
 
   echo "<tr class='posts__table'>
-          <td>$id<td>
-          <td>$title<td>
-          <td>$text<td>
-          <td>$date<td>
+          <td>$id</td>
+          <td>$title</td>
+          <td>$text</td>
+          <td>$date</td>
           <td>
           <button class='button edit'>
             <a href='index.php?id=$id'>Edit</a>
           </button>
           <button class='button abort' onclick='return deleteTodo(".$id.")'> Delete</button>
           </td>
-        <tr>";
+        </tr>";
 endwhile;
 
 echo "</table>";
