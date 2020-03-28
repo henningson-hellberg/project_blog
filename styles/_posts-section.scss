@@ -1,0 +1,16 @@
+.posts-section {
+  background: white;
+  max-width: 700px;
+  margin: 5vh auto 2vh auto;
+  padding: 0 2em;
+  border-radius: 20px;
+  .post {
+    padding-top: 2em;
+    .end-line {
+      height: 1px;
+      width: 100%;
+      background: rgb(235, 235, 235);
+      margin-top: 2em;
+    }
+  }
+}
