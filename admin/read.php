@@ -27,6 +27,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $id = htmlspecialchars($row['id']);
   $title = htmlspecialchars($row['title']);
   $text = htmlspecialchars($row['text']);
+  $date = htmlspecialchars($row['date']);
 
   echo "<tr class='posts__table'>
           <td>$id</td>

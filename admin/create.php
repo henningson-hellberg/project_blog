@@ -37,26 +37,34 @@
    //Hantera data som skickas via formulär
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     //Test
-    //print_r($_POST);
+    // print_r($_POST);
 
     //Skapa en SQL-sats
+    if($_POST['image'] !== "") {
     $sql = "INSERT INTO blog_posts (title, image_id, text )
             VALUES ( :title , :image_id , :text) ";
-
-            //:name och :tel kallas "parameter markers"= platshållare
-
-    //Prepared statements
     $stmt = $db->prepare($sql);
-
-    //Binda parametrar
+    
     $title = htmlspecialchars($_POST['title']);
     $image_id = htmlspecialchars($_POST['image']);
     $text = htmlspecialchars($_POST['text']);
     $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':image_id', $image_id);
     $stmt->bindParam(':text', $text);
+    $stmt->bindParam(':image_id', $image_id);
+  } else {
+    $sql = "INSERT INTO blog_posts (title, text )
+            VALUES ( :title , :text) ";
+    $stmt = $db->prepare($sql);
+    
+    $title = htmlspecialchars($_POST['title']);
+    $text = htmlspecialchars($_POST['text']);
+    $stmt->bindParam(':title', $title);
+    $stmt->bindParam(':text', $text);
+    }
 
-    //Skicka SQL-satsen till databas-servern
+
+
+    // Skicka SQL-satsen till databas-servern
     $stmt->execute();
 
    endif;

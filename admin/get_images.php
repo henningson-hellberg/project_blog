@@ -3,10 +3,9 @@
 $sql = "SELECT * FROM blog_images";
    $stmt = $db->prepare($sql);
    $stmt->execute();
-   $null = NULL;
 
    $radioImgs = "<div>
-                     <input type='radio' id='no_img' name='image' value=$null>
+                     <input type='radio' id='no_img' name='image' value=''>
                      <label for='no_img'>
                         No image
                      </label>

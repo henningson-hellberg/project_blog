@@ -23,7 +23,6 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    print_r($_POST);
     $title = htmlspecialchars($_POST['title']);
     $text = htmlspecialchars($_POST['text']);
     $id = htmlspecialchars($_GET['id']);
