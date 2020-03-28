@@ -25,18 +25,15 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $inputText = htmlspecialchars($row['PostText']);
   $outputText = str_replace("<br />", "</p>\n<p>", nl2br($inputText));
   $outputText = "<p>" . $outputText . "</p>";
-  echo $image;
-  echo "<br />";
 
 
-  $posts .="<div class='post'>
-             <h2 class='post__title'>$title</h2>";
-             $image ? $posts.= "<div class='post__img'><img src='./admin/$image'></img></div>" :null;
-             $posts .="<span class='post__date'>$date</span>
-             $outputText";
-              
-
-  $posts .= "</div>";
+  $posts .="<article class='post'>
+             <h2 class='post__title'>$title</h2>
+             <span class='post__date'>$date</span>";
+             $image ? $posts.= "<div class='image-wrapper'><img class='image-wrapper__img' src='./admin/$image'></img></div>" :null;
+             $posts .= $outputText;
+             $posts .= "<div class='end-line'></div>";
+  $posts .= "</article>";
 
 endwhile;
 $posts .= "</section>";
