@@ -40,8 +40,8 @@
     //print_r($_POST);
 
     //Skapa en SQL-sats
-    $sql = "INSERT INTO blog_posts (title, image, text )
-            VALUES ( :title , :image , :text) ";
+    $sql = "INSERT INTO blog_posts (title, image_id, text )
+            VALUES ( :title , :image_id , :text) ";
 
             //:name och :tel kallas "parameter markers"= platshållare
 
@@ -50,10 +50,10 @@
 
     //Binda parametrar
     $title = htmlspecialchars($_POST['title']);
-    $image = htmlspecialchars($_POST['image']);
+    $image_id = htmlspecialchars($_POST['image']);
     $text = htmlspecialchars($_POST['text']);
     $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':image', $image);
+    $stmt->bindParam(':image_id', $image_id);
     $stmt->bindParam(':text', $text);
 
     //Skicka SQL-satsen till databas-servern

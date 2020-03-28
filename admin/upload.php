@@ -40,10 +40,10 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename($_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $sql = "INSERT INTO blog_images (image)
-        VALUES (:image)";
+        $sql = "INSERT INTO blog_images (image_url)
+        VALUES (:image_url)";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(":image", $target_file);
+        $stmt->bindParam(":image_url", $target_file);
         $stmt->execute();
     } else {
         echo "Sorry, there was an error uploading your file.";
