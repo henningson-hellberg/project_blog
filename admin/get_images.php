@@ -21,6 +21,6 @@ $sql = "SELECT * FROM blog_images";
                      <label for='$image_id'>
                       <img src='$image_url' class='thumbnails'>
                      </label></div>";
-     endwhile;
-     echo $radioImgs;
-  }
+       endwhile;
+       echo $radioImgs;
+   }

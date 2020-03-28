@@ -18,7 +18,6 @@ $stmt->execute();
 
 $posts = "<section class='posts-section'>";
 
-
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $title = htmlspecialchars($row['PostTitle']);
   $date = htmlspecialchars($row['PostDate']);
@@ -42,4 +41,3 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
 endwhile;
 $posts .= "</section>";
 echo $posts;
-?>

@@ -1,6 +1,6 @@
 <script>
 function deleteTodo (id) {
-  if(confirm("Are you sure you want to delete this post?")==true) {
+  if(confirm("Are you sure yu want to delete this post?")==true) {
     window.location = `delete.php?id=${id}`;
   }
 }
@@ -27,8 +27,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $id = htmlspecialchars($row['id']);
   $title = htmlspecialchars($row['title']);
   $text = htmlspecialchars($row['text']);
-  $date = htmlspecialchars($row['date']);
-
 
   echo "<tr class='posts__table'>
           <td>$id</td>
