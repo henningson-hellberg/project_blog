@@ -40,7 +40,11 @@
     //Test
     // print_r($_POST);
 
-
+    $srcStart = stripos($_POST['embed'], "src") + 5;
+    $scrEnd = stripos($_POST['embed'], '"', $srcStart) - $srcStart;
+    $src = substr($_POST['embed'], $srcStart, $scrEnd );
+    // echo $srcStart;
+    // echo $scrEnd;
 
 
      $sql = "INSERT INTO blog_posts (title, image_id, text, embed )
@@ -49,7 +53,7 @@
       $stmt = $db->prepare($sql);
       $title = htmlspecialchars($_POST['title']);
       $_POST['image'] == "" ? $image_id = null : $image_id = htmlspecialchars($_POST['image']); 
-      $_POST['embed'] !== "" ? $embed = htmlspecialchars($_POST['embed']) :  $embed = null;
+      $_POST['embed'] !== "" ? $embed = htmlspecialchars($src) :  $embed = null;
       $text = htmlspecialchars($_POST['text']);
       $stmt->bindParam(':title', $title);
       $stmt->bindParam(':text', $text);

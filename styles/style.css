@@ -36,6 +36,12 @@ body {
   max-width: 100%;
 }
 
+.map {
+  width: 600px;
+  height: 450px;
+  border: 0;
+}
+
 .top-header {
   background: white;
   text-align: center;
@@ -68,6 +74,19 @@ body {
 
 .posts-section .post__text {
   margin-top: 2em;
+}
+
+.posts-section .post__embed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.posts-section .post__embed__item {
+  min-width: 500px;
+  min-height: 380px;
+  border: 0;
+  margin: auto;
 }
 
 .posts-section .post .end-line {
