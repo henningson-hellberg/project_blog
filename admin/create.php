@@ -55,31 +55,6 @@
       $stmt->bindParam(':image_id', $image_id);
 
 
-
-
-
-    // if ($_POST['image'] !== "") {
-    //     $sql = "INSERT INTO blog_posts (title, image_id, text )
-    //         VALUES ( :title , :image_id , :text) ";
-    //     $stmt = $db->prepare($sql);
-    //     $title = htmlspecialchars($_POST['title']);
-    //     $image_id = htmlspecialchars($_POST['image']);
-    //     $text = htmlspecialchars($_POST['text']);
-    //     $stmt->bindParam(':title', $title);
-    //     $stmt->bindParam(':text', $text);
-    //     $stmt->bindParam(':image_id', $image_id);
-    // } else {
-    //     $sql = "INSERT INTO blog_posts (title, text )
-    //         VALUES ( :title , :text) ";
-    //     $stmt = $db->prepare($sql);
-    //     $title = htmlspecialchars($_POST['title']);
-    //     $text = htmlspecialchars($_POST['text']);
-    //     $stmt->bindParam(':title', $title);
-    //     $stmt->bindParam(':text', $text);
-    // }
-
-
-
     // Skicka SQL-satsen till databas-servern
     $stmt->execute();
 

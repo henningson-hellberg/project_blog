@@ -142,6 +142,21 @@
   max-width: 100px;
 }
 
+.admin__form__image .img-selection__radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.admin__form__image .img-selection__radio + .admin__form__image .img-selection__btn {
+  cursor: pointer;
+}
+
+.admin__form__image .img-selection__radio:checked + .admin__form__image .img-selection__btn {
+  outline: 2px solid #f00;
+}
+
 .posts table {
   border: none;
   text-align: center;
