@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php
 /*****************************
    *
@@ -41,11 +46,11 @@
     // print_r($_POST);
 
     // If an embedabel link is input, get only the source
-    if($_POST['embed'] !== "") {
-      $srcStart = stripos($_POST['embed'], "src") + 5;
-      $scrEnd = stripos($_POST['embed'], '"', $srcStart) - $srcStart;
-      $src = substr($_POST['embed'], $srcStart, $scrEnd );
-      // echo $srcStart;
+    if ($_POST['embed'] !== "") {
+        $srcStart = stripos($_POST['embed'], "src") + 5;
+        $scrEnd = stripos($_POST['embed'], '"', $srcStart) - $srcStart;
+        $src = substr($_POST['embed'], $srcStart, $scrEnd);
+        // echo $srcStart;
       // echo $scrEnd;
     }
 
@@ -54,7 +59,7 @@
 
       $stmt = $db->prepare($sql);
       $title = htmlspecialchars($_POST['title']);
-      $_POST['image'] == "" ? $image_id = null : $image_id = htmlspecialchars($_POST['image']); 
+      $_POST['image'] == "" ? $image_id = null : $image_id = htmlspecialchars($_POST['image']);
       $_POST['embed'] !== "" ? $embed = htmlspecialchars($src) :  $embed = null;
       $text = htmlspecialchars($_POST['text']);
       $stmt->bindParam(':title', $title);
@@ -76,6 +81,7 @@
             <label for="title">Post title</label>
             <input type="text" name="title" placeholder="Title" required>
           </div>
+          <button class="button addImg edit"type="button">Add image</button>
           <div class="admin__form__image">
             <?php require_once "get_images.php";?>
           </div>
@@ -94,3 +100,19 @@
         </div>
       </form>
     </div>
+
+
+
+<script>
+      radios = document.querySelectorAll('.img-selection__radio')
+      images = document.querySelector('.images')
+      radios[0].checked = true;
+
+      addImg = document.querySelector('.addImg')
+      addImg.addEventListener('click', e => {
+        e.preventDefault
+          console.log(images)
+        images.classList.toggle('hidden')
+      })
+
+ </script>

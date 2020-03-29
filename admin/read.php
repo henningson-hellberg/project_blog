@@ -50,3 +50,4 @@ endwhile;
 
 echo "</table>";
 echo "</section>";
+echo "</section>";
