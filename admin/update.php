@@ -4,7 +4,6 @@ require_once 'db.php';
 if (isset($_GET['id'])) {
     $id = htmlspecialchars($_GET['id']);
 
-  
     $stmt = $db->prepare("SELECT * FROM blog_posts WHERE id =:id");
     $stmt->bindParam(':id', $id);
     $stmt->execute();
@@ -21,6 +20,26 @@ if (isset($_GET['id'])) {
     header('Location: index.php');
     exit;
 }
+
+if (isset($_GET['published'])) {
+    $published = htmlspecialchars($_GET['published']);
+    $id = htmlspecialchars($_GET['id']);
+    echo $published;
+ 
+
+    $sql = "UPDATE blog_posts
+          SET published = :published
+          WHERE id = :id";
+  
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':published', $published);
+
+    $stmt->execute();
+    // header('Location: index.php');
+}
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
