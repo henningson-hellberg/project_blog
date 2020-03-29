@@ -26,15 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $text = htmlspecialchars($_POST['text']);
     $id = htmlspecialchars($_GET['id']);
+    $_POST['image'] !== "" ? $image_id = htmlspecialchars($_POST['image']) :  $image_id = null;
+
 
     $sql = "UPDATE blog_posts
-          SET title = :title, text =:text
+          SET title = :title, text =:text, image_id = :image_id
           WHERE id = :id";
   
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':title', $title);
     $stmt->bindParam(':text', $text);
     $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':image_id', $image_id);
 
     $stmt->execute();
     header('Location: index.php');

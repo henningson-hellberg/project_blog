@@ -34,33 +34,49 @@
   // }
 
 
+
    //Hantera data som skickas via formulär
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     //Test
     // print_r($_POST);
 
-    //Skapa en SQL-sats
-    if($_POST['image'] !== "") {
-    $sql = "INSERT INTO blog_posts (title, image_id, text )
-            VALUES ( :title , :image_id , :text) ";
-    $stmt = $db->prepare($sql);
-    
-    $title = htmlspecialchars($_POST['title']);
-    $image_id = htmlspecialchars($_POST['image']);
-    $text = htmlspecialchars($_POST['text']);
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':text', $text);
-    $stmt->bindParam(':image_id', $image_id);
-  } else {
-    $sql = "INSERT INTO blog_posts (title, text )
-            VALUES ( :title , :text) ";
-    $stmt = $db->prepare($sql);
-    
-    $title = htmlspecialchars($_POST['title']);
-    $text = htmlspecialchars($_POST['text']);
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':text', $text);
-    }
+
+
+
+     $sql = "INSERT INTO blog_posts (title, image_id, text )
+             VALUES ( :title , :image_id , :text) ";
+
+      $stmt = $db->prepare($sql);
+      $title = htmlspecialchars($_POST['title']);
+      $_POST['image'] !== "" ? $image_id = htmlspecialchars($_POST['image']) :  $image_id = null;
+      $text = htmlspecialchars($_POST['text']);
+      $stmt->bindParam(':title', $title);
+      $stmt->bindParam(':text', $text);
+      $stmt->bindParam(':image_id', $image_id);
+
+
+
+
+
+    // if ($_POST['image'] !== "") {
+    //     $sql = "INSERT INTO blog_posts (title, image_id, text )
+    //         VALUES ( :title , :image_id , :text) ";
+    //     $stmt = $db->prepare($sql);
+    //     $title = htmlspecialchars($_POST['title']);
+    //     $image_id = htmlspecialchars($_POST['image']);
+    //     $text = htmlspecialchars($_POST['text']);
+    //     $stmt->bindParam(':title', $title);
+    //     $stmt->bindParam(':text', $text);
+    //     $stmt->bindParam(':image_id', $image_id);
+    // } else {
+    //     $sql = "INSERT INTO blog_posts (title, text )
+    //         VALUES ( :title , :text) ";
+    //     $stmt = $db->prepare($sql);
+    //     $title = htmlspecialchars($_POST['title']);
+    //     $text = htmlspecialchars($_POST['text']);
+    //     $stmt->bindParam(':title', $title);
+    //     $stmt->bindParam(':text', $text);
+    // }
 
 
 
