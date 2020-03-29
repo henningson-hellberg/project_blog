@@ -19,14 +19,14 @@ $stmt->execute();
 
 $posts = "<section class='posts-section'>";
 
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $title = htmlspecialchars($row['PostTitle']);
   $date = htmlspecialchars($row['PostDate']);
   $image = htmlspecialchars($row['PostImage']);
   $inputText = htmlspecialchars($row['PostText']);
   $outputText = str_replace("<br />", "</p>\n<p>", nl2br($inputText));
   $outputText = "<p>" . $outputText . "</p>";
-  $embed = htmlspecialchars($row['PostEmbed']);
+  $embed = ($row['PostEmbed']);
 
 
   $posts .="<article class='post'>
@@ -37,6 +37,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
              $image ? $posts.= "<div class='image-wrapper'><img class='image-wrapper__img' src='./admin/$image'></img></div>" :null;
              $posts .= "<div class='post__text'>" . $outputText . "</div>";
              $embed ? $posts.= "<div class='post__embed'><iframe class='post__embed__item' src='$embed'></iframe></div>" :null;
+
              $posts .= "<div class='end-line'></div>";
   $posts .= "</article>";
 

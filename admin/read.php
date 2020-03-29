@@ -18,6 +18,7 @@ echo "<h2 class='posts__header'> Posts </h2>";
 echo "<table cellpadding='0' cellspacing='0'>";
 echo "<tr>
         <th>Id</th>
+         <th>Publish</th>
         <th>Title</th>
         <th>Text</th>
         <th>Datum</th>
@@ -31,6 +32,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
 
   echo "<tr class='posts__table'>
           <td>$id</td>
+          <td><button> <a href='index.php?id=$id&published=1'>Publish </a><button><button><a href='index.php?id=$id&published=0'>Unpublish </a></button></td>
+        
           <td>$title</td>
           <td>$text</td>
           <td>$date</td>
