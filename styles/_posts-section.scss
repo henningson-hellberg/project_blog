@@ -18,6 +18,15 @@
     &__text {
       margin-top: 2em;
     }
+    &__embed {
+      display: flex;
+      &__item {
+        min-width: 500px;
+        min-height: 380px;
+        border: 0;
+        margin: auto;
+      }
+    }
     .end-line {
       height: 1px;
       width: 100%;

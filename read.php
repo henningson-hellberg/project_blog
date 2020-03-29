@@ -36,7 +36,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
             </header>";
              $image ? $posts.= "<div class='image-wrapper'><img class='image-wrapper__img' src='./admin/$image'></img></div>" :null;
              $posts .= "<div class='post__text'>" . $outputText . "</div>";
-             $embed ? $posts.= "<div class='post__embed'>htmlspecialchars_decode($embed)</div>" :null;
+             $embed ? $posts.= "<div class='post__embed'><iframe class='post__embed__item' src='$embed'></iframe></div>" :null;
              $posts .= "<div class='end-line'></div>";
   $posts .= "</article>";
 
