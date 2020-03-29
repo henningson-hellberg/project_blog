@@ -55,6 +55,32 @@
   background-color: rgba(11, 108, 235, 0.728);
 }
 
+.unpublished {
+  background-color: rgba(184, 29, 29, 0.728);
+}
+
+.unpublished:hover {
+  background-color: rgba(184, 29, 29, 0.865);
+}
+
+.published {
+  background-color: rgba(38, 179, 73, 0.728);
+}
+
+.published:hover {
+  background-color: rgba(38, 179, 73, 0.844);
+}
+
+.publish {
+  padding: 0;
+}
+
+.publish a {
+  height: 100%;
+  color: black;
+  text-decoration: none;
+}
+
 .admin {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -18,7 +18,7 @@ echo "<h2 class='posts__header'> Posts </h2>";
 echo "<table cellpadding='0' cellspacing='0'>";
 echo "<tr>
         <th>Id</th>
-         <th>Publish</th>
+         <th>Published</th>
         <th>Title</th>
         <th>Text</th>
         <th>Datum</th>
@@ -29,11 +29,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $title = htmlspecialchars($row['title']);
   $text = htmlspecialchars($row['text']);
   $date = htmlspecialchars($row['date']);
+  $published = htmlspecialchars($row['published']);
+  $published == 0 ? $publishBtn = "<button class='button publish unpublished'> <a href='index.php?id=$id&published=1'>No </a></button>" : $publishBtn = "<button class='published button publish'> <a href='index.php?id=$id&published=0'>Yes </a></button>";
+ 
 
   echo "<tr class='posts__table'>
           <td>$id</td>
-          <td><button> <a href='index.php?id=$id&published=1'>Publish </a><button><button><a href='index.php?id=$id&published=0'>Unpublish </a></button></td>
-        
+          <td>$publishBtn</td>
           <td>$title</td>
           <td>$text</td>
           <td>$date</td>
