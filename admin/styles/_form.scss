@@ -28,10 +28,10 @@
       }
       .img-selection {
         &__radio {
-          position: absolute;
-          opacity: 0;
-          width: 0;
-          height: 0;
+          // position: absolute;
+          // opacity: 0;
+          // width: 0;
+          // height: 0;
         }
         &__radio + &__btn {
           cursor: pointer;

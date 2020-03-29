@@ -54,6 +54,22 @@ body {
   padding-top: 2em;
 }
 
+.posts-section .post__header {
+  margin-bottom: 2em;
+}
+
+.posts-section .post__header__title {
+  font-size: 2em;
+}
+
+.posts-section .post__header__date {
+  color: #a3a3a3;
+}
+
+.posts-section .post__text {
+  margin-top: 2em;
+}
+
 .posts-section .post .end-line {
   height: 1px;
   width: 100%;

@@ -5,6 +5,7 @@ $sql = "SELECT
         P.title as PostTitle,
         P.date as PostDate,
         P.text as PostText,
+        P.embed as PostEmbed,
         I.image_url as PostImage
         FROM
         blog_posts AS P
@@ -25,13 +26,17 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $inputText = htmlspecialchars($row['PostText']);
   $outputText = str_replace("<br />", "</p>\n<p>", nl2br($inputText));
   $outputText = "<p>" . $outputText . "</p>";
+  $embed = htmlspecialchars($row['PostEmbed']);
 
 
   $posts .="<article class='post'>
-             <h2 class='post__title'>$title</h2>
-             <span class='post__date'>$date</span>";
+            <header class='post__header'>
+              <h2 class='post__header__title'>$title</h2>
+              <span class='post__header__date'>$date</span>
+            </header>";
              $image ? $posts.= "<div class='image-wrapper'><img class='image-wrapper__img' src='./admin/$image'></img></div>" :null;
-             $posts .= $outputText;
+             $posts .= "<div class='post__text'>" . $outputText . "</div>";
+             $embed ? $posts.= "<div class='post__embed'>htmlspecialchars_decode($embed)</div>" :null;
              $posts .= "<div class='end-line'></div>";
   $posts .= "</article>";
 

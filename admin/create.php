@@ -43,16 +43,18 @@
 
 
 
-     $sql = "INSERT INTO blog_posts (title, image_id, text )
-             VALUES ( :title , :image_id , :text) ";
+     $sql = "INSERT INTO blog_posts (title, image_id, text, embed )
+             VALUES ( :title , :image_id , :text, :embed) ";
 
       $stmt = $db->prepare($sql);
       $title = htmlspecialchars($_POST['title']);
-      $_POST['image'] !== "" ? $image_id = htmlspecialchars($_POST['image']) :  $image_id = null;
+      $_POST['image'] == "" ? $image_id = null : $image_id = htmlspecialchars($_POST['image']); 
+      $_POST['embed'] !== "" ? $embed = htmlspecialchars($_POST['embed']) :  $embed = null;
       $text = htmlspecialchars($_POST['text']);
       $stmt->bindParam(':title', $title);
       $stmt->bindParam(':text', $text);
       $stmt->bindParam(':image_id', $image_id);
+      $stmt->bindParam(':embed', $embed);
 
 
     // Skicka SQL-satsen till databas-servern
@@ -65,6 +67,7 @@
       <form class="admin__form" action="index.php" method="POST">
         <div>
           <div class="admin__form__title">
+            <label for="title">Post title</label>
             <input type="text" name="title" placeholder="Title" required>
           </div>
           <div class="admin__form__image">
@@ -74,6 +77,10 @@
           <input type="hidden" name="chosen-img"> -->
           <div class="admin__form__textArea">
             <textarea name="text" id="text" cols="30" rows="10" placeholder="Text goes here" required></textarea>
+          </div>
+          <div class="admin__form__embed">
+            <label for="embed">Add a map or youtube video</label>
+            <input type="text" name="embed" placeholder="Lägg till en karta eller youtubevideo">
           </div>
           <div>
             <input class="button submit" type="submit" value="Lägg till">
