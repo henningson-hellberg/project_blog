@@ -40,12 +40,14 @@
     //Test
     // print_r($_POST);
 
-    $srcStart = stripos($_POST['embed'], "src") + 5;
-    $scrEnd = stripos($_POST['embed'], '"', $srcStart) - $srcStart;
-    $src = substr($_POST['embed'], $srcStart, $scrEnd );
-    // echo $srcStart;
-    // echo $scrEnd;
-
+    // If an embedabel link is input, get only the source
+    if($_POST['embed'] !== "") {
+      $srcStart = stripos($_POST['embed'], "src") + 5;
+      $scrEnd = stripos($_POST['embed'], '"', $srcStart) - $srcStart;
+      $src = substr($_POST['embed'], $srcStart, $scrEnd );
+      // echo $srcStart;
+      // echo $scrEnd;
+    }
 
      $sql = "INSERT INTO blog_posts (title, image_id, text, embed )
              VALUES ( :title , :image_id , :text, :embed) ";

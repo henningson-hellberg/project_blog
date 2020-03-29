@@ -36,6 +36,8 @@ if (isset($_GET['published'])) {
     $stmt->bindParam(':published', $published);
 
     $stmt->execute();
+    header("Location: index.php");
+    exit;
     // header('Location: index.php');
 }
 
