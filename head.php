@@ -11,4 +11,5 @@
   <header class="top-header">
     <h1>Välkommen till bloggen</h1>
   </header>
+  <main class="main-content">
   

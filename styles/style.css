@@ -10,6 +10,18 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.main-content {
+  max-width: 80vw;
+  margin: 2em auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: (auto)[2] 2fr;
+      grid-template-rows: repeat(2, auto) 2fr;
+  gap: 20px;
+}
+
 .image-wrapper {
   position: relative;
   height: 100%;
@@ -30,11 +42,11 @@ body {
   display: block;
   -o-object-position: center center;
      object-position: center center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
   width: 100%;
-  max-height: 100%;
+  max-height: 300px;
   max-width: 100%;
 }
 
@@ -51,18 +63,15 @@ body {
 }
 
 .posts-section {
-  max-width: 50vw;
   min-width: 500px;
-  margin: 5vh auto 2vh auto;
   border: 1px solid;
   background: white;
+  grid-row: span 3;
 }
 
 .posts-section .post {
   padding: 2em 3em 0 3em;
-  background: #22c1c3;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(69%, gray), to(white));
-  background: linear-gradient(0deg, gray 69%, white 100%);
+  background: white;
 }
 
 .posts-section .post__header {
@@ -110,5 +119,23 @@ body {
   width: 100%;
   background: #ebebeb;
   margin-top: 2em;
+}
+
+.about {
+  background: white;
+  border: 1px solid;
+  padding: 2em 3em;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1, 2;
+}
+
+.popular {
+  background: white;
+  border: 1px solid;
+  padding: 2em 3em;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1, 2;
 }
 /*# sourceMappingURL=style.css.map */

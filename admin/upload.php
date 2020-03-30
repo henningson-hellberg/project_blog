@@ -49,3 +49,21 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+$exif_data = exif_read_data($target_file);
+echo "<pre>";
+print_r($exif_data);
+echo "</pre>";
+
+function orientation($exif_data) {
+    foreach ($exif_data as $key => $val) {
+        
+        if(strtolower($key) == "orientation") {
+            return $val;
+        }
+    }
+}
+$orientation = orientation($exif_data);
+echo "<pre>";
+print_r($orientation);
+echo "</pre>";
