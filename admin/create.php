@@ -72,9 +72,9 @@
     $stmt->execute();
 
    endif;
-?>  
+?>  <div class="createUpload">
     <div class="admin_card">
-      <h1>halde</h1>
+      <h1>Create a Post</h1>
       <form class="admin__form" action="index.php" method="POST">
         <div>
           <div class="admin__form__title">
@@ -100,6 +100,8 @@
         </div>
       </form>
     </div>
-
+    <?php
+    require_once "uploadForm.php" ?>
+  </div>
 
 
