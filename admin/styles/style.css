@@ -27,10 +27,6 @@
   text-decoration: none;
 }
 
-.button a:hover {
-  color: black;
-}
-
 .abort:hover {
   background-color: rgba(184, 29, 29, 0.728);
 }

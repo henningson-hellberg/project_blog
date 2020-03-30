@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $title = $row['title'];
         $text = $row['text'];
+        $embed = $row['embed'];
     } else {
         header('Location: index.php');
         exit;
@@ -48,10 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $text = htmlspecialchars($_POST['text']);
     $id = htmlspecialchars($_GET['id']);
     $_POST['image'] !== "" ? $image_id = htmlspecialchars($_POST['image']) :  $image_id = null;
+    $_POST['embed'] !== null ? $embed = $_POST['embed'] :  $embed = null;
 
 
     $sql = "UPDATE blog_posts
-          SET title = :title, text =:text, image_id = :image_id
+          SET title = :title, text =:text, image_id = :image_id, embed = :embed
           WHERE id = :id";
   
     $stmt = $db->prepare($sql);
@@ -59,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':text', $text);
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':image_id', $image_id);
+    $stmt->bindParam(':embed', $embed);
 
     $stmt->execute();
     header('Location: index.php');
@@ -71,11 +74,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="admin__form__title">
         <input type="text" name="title" placeholder="Title" value="<?php echo $title ?>">
       </div>
+      <button class="button addImg edit" type="button">Add image</button>
       <div class="admin__form__image">
-            <?php require_once "get_images.php";?>
+        <?php require_once "get_images.php";?>
       </div>
       <div class="admin__form__textArea">
         <textarea name="text" id="text" cols="30" rows="10"><?php echo $text ?></textarea>
+      </div>
+      <div class="admin__form__embed">
+        <label for="embed">Add a map or youtube video</label>
+        <input type="text" name="embed" value= <?php echo $embed ?>  >
       </div>
       <div class="admin__form__buttons">
         <div>

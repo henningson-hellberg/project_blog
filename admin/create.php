@@ -103,16 +103,3 @@
 
 
 
-<script>
-      radios = document.querySelectorAll('.img-selection__radio')
-      images = document.querySelector('.images')
-      radios[0].checked = true;
-
-      addImg = document.querySelector('.addImg')
-      addImg.addEventListener('click', e => {
-        e.preventDefault
-          console.log(images)
-        images.classList.toggle('hidden')
-      })
-
- </script>
