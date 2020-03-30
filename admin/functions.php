@@ -1,6 +1,6 @@
 <?php
 
-function shortenString($string) {
-  $returnString = substr($string, 0, 9);
+function shortenString($string, $end) {
+  $returnString = substr($string, 0, $end);
   return $returnString;
 }

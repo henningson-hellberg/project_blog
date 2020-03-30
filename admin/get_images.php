@@ -13,6 +13,8 @@
 //          $activeImgId = $row['image_id'];
 //       endwhile;
 //    }
+// } else {
+//    $activeImgId == "";
 // }
 
 $sql = "SELECT * FROM blog_images";
@@ -40,7 +42,6 @@ $sql = "SELECT * FROM blog_images";
        endwhile;
        $radioImgs .= "</div>";
        echo $radioImgs;
-      //  echo $activeImgId;
    }
 
 ?>
