@@ -1,19 +1,21 @@
 <?php
 
-if(isset($_GET['id'])) {
-   $id = $_GET['id'];
+// if(isset($_GET['id'])) {
+//    $id = $_GET['id'];
 
-   $sql = "SELECT * FROM blog_posts WHERE id = :id";
-   $stmt = $db->prepare($sql);
-   $stmt->bindParam(':id', $id);
-   $stmt->execute();
+//    $sql = "SELECT * FROM blog_posts WHERE id = :id";
+//    $stmt = $db->prepare($sql);
+//    $stmt->bindParam(':id', $id);
+//    $stmt->execute();
 
-   if ($stmt->rowCount() !== 0) {
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
-         $activeImgId = $row['image_id'];
-      endwhile;
-   }
-}
+//    if ($stmt->rowCount() !== 0) {
+//       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+//          $activeImgId = $row['image_id'];
+//       endwhile;
+//    }
+// } else {
+//    $activeImgId == "";
+// }
 
 $sql = "SELECT * FROM blog_images";
    $stmt = $db->prepare($sql);
@@ -40,7 +42,6 @@ $sql = "SELECT * FROM blog_images";
        endwhile;
        $radioImgs .= "</div>";
        echo $radioImgs;
-       echo $activeImgId;
    }
 
 ?>

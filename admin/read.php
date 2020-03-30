@@ -27,8 +27,8 @@ echo "<tr>
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $id = htmlspecialchars($row['id']);
-  $title = shortenString(htmlspecialchars($row['title']));
-  $text = shortenString(htmlspecialchars($row['text']));
+  $title = shortenString(htmlspecialchars($row['title']), 10);
+  $text = shortenString(htmlspecialchars($row['text']), 20);
   $date = htmlspecialchars($row['date']);
   $published = htmlspecialchars($row['published']);
   $published == 0 ? $publishBtn = "<button class='button publish unpublished'> <a href='index.php?id=$id&published=1'>No </a></button>" : $publishBtn = "<button class='published button publish'> <a href='index.php?id=$id&published=0'>Yes </a></button>";
