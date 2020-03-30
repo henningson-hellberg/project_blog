@@ -17,18 +17,10 @@
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: white;
-}
-
 .button a {
   height: 100%;
   color: white;
   text-decoration: none;
-}
-
-.button a:hover {
-  color: black;
 }
 
 .abort:hover {
@@ -97,7 +89,7 @@
   min-height: 800px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   .admin {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -120,6 +112,31 @@
   padding: 10px;
   background-color: white;
   margin: 50px 10px;
+}
+
+.upload {
+  height: 60px;
+}
+
+.createUpload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 1500px) {
+  .createUpload {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
 }
 
 * {
@@ -206,12 +223,23 @@
 .posts table th {
   background-color: #111812;
   color: white;
-  min-width: 50px;
+  width: 120px;
+}
+
+.posts table th:first-of-type {
+  width: 40px;
+}
+
+.posts table th:nth-of-type(2) {
+  width: 40px;
+}
+
+.posts table th:nth-of-type(4) {
+  width: 400px;
 }
 
 .posts table td {
   height: 80px;
-  min-width: 60px;
 }
 
 .posts table tr:hover {
@@ -227,4 +255,4 @@
   height: 200px;
   border: 1px solid black;
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=style.css.map */

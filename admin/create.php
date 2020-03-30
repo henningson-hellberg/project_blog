@@ -72,9 +72,9 @@
     $stmt->execute();
 
    endif;
-?>  
+?>  <div class="createUpload">
     <div class="admin_card">
-      <h1>halde</h1>
+      <h1>Create a Post</h1>
       <form class="admin__form" action="index.php" method="POST">
         <div>
           <div class="admin__form__title">
@@ -100,19 +100,8 @@
         </div>
       </form>
     </div>
+    <?php
+    require_once "uploadForm.php" ?>
+  </div>
 
 
-
-<script>
-      radios = document.querySelectorAll('.img-selection__radio')
-      images = document.querySelector('.images')
-      radios[0].checked = true;
-
-      addImg = document.querySelector('.addImg')
-      addImg.addEventListener('click', e => {
-        e.preventDefault
-          console.log(images)
-        images.classList.toggle('hidden')
-      })
-
- </script>
