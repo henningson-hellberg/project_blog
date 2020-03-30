@@ -1,5 +1,20 @@
 <?php
 
+if(isset($_GET['id'])) {
+   $id = $_GET['id'];
+
+   $sql = "SELECT * FROM blog_posts WHERE id = :id";
+   $stmt = $db->prepare($sql);
+   $stmt->bindParam(':id', $id);
+   $stmt->execute();
+
+   if ($stmt->rowCount() !== 0) {
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+         $activeImgId = $row['image_id'];
+      endwhile;
+   }
+}
+
 $sql = "SELECT * FROM blog_images";
    $stmt = $db->prepare($sql);
    $stmt->execute();
@@ -21,13 +36,11 @@ $sql = "SELECT * FROM blog_images";
                      <label class='img-selection'>
                         <input class='img-selection__radio' type='radio' id='$image_id' name='image' value='$image_id'>
                         <img class='img-selection__btn thumbnails' src='$image_url' class='thumbnails'>
-                     </label>
-                  
-                     
-                     ";
+                     </label>";
        endwhile;
        $radioImgs .= "</div>";
        echo $radioImgs;
+       echo $activeImgId;
    }
 
 ?>

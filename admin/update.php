@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $title = $row['title'];
         $text = $row['text'];
+        $image_id = $row['image_id'];
     } else {
         header('Location: index.php');
         exit;

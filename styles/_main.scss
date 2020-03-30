@@ -1,14 +1,16 @@
 body {
-  background: rgb(235, 235, 235);
+  background: rgb(216, 216, 216);
+  font-family: 'Poppins', sans-serif;
 }
 
 .image-wrapper {
   position: relative;
   height: 100%;
-  width: 100%;
+  width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 
   &__img {
     display: block;

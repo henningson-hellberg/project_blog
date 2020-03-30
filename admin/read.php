@@ -8,7 +8,8 @@ function deleteTodo (id) {
 
 <?php
 require_once 'db.php';
-$sql = "SELECT * FROM blog_posts";
+require_once 'functions.php';
+$sql = "SELECT * FROM blog_posts ORDER BY blog_posts.date DESC";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
@@ -26,8 +27,8 @@ echo "<tr>
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $id = htmlspecialchars($row['id']);
-  $title = htmlspecialchars($row['title']);
-  $text = htmlspecialchars($row['text']);
+  $title = shortenString(htmlspecialchars($row['title']));
+  $text = shortenString(htmlspecialchars($row['text']));
   $date = htmlspecialchars($row['date']);
   $published = htmlspecialchars($row['published']);
   $published == 0 ? $publishBtn = "<button class='button publish unpublished'> <a href='index.php?id=$id&published=1'>No </a></button>" : $publishBtn = "<button class='published button publish'> <a href='index.php?id=$id&published=0'>Yes </a></button>";
@@ -36,8 +37,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   echo "<tr class='posts__table'>
           <td>$id</td>
           <td>$publishBtn</td>
-          <td>$title</td>
-          <td>$text</td>
+          <td>$title...</td>
+          <td>$text...</td>
           <td>$date</td>
           <td>
           <button class='button edit'>
