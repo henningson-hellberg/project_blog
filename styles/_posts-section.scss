@@ -10,14 +10,21 @@
 
   .post {
     padding: 2em 3em 0 3em;
-    &__header {
+    &__line {
       margin-bottom: 2em;
+    }
+    &__header {
+      margin-bottom: 1em;
+      display: flex;
+      padding: 0;
       &__title {
         font-size: 2em;
         font-weight: $font--bold;
       }
       &__date {
         color: #456a68;
+        margin-left: auto;
+        padding-top: 10px;
       }
     }
     &__text {

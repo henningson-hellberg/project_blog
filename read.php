@@ -35,13 +35,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
             <header class='post__header'>
               <h2 class='post__header__title'>$title</h2>
               <span class='post__header__date'>$date</span>
-              <div class='line__start'></div>
-            </header>";
+              </header>
+              <div class='post__line line__start'></div>
+
+              ";
              $image ? $posts.= "<div class='image-wrapper'><img class='image-wrapper__img' src='./admin/$image'></img></div>" :null;
              $posts .= "<div class='post__text'>" . $outputText . "</div>";
              $embed ? $posts.= "<div class='post__embed'><iframe class='post__embed__item' src='$embed'></iframe></div>" :null;
 
-             $posts .= "<div class='line__end'></div>";
+             
   $posts .= "</article>";
 
 endwhile;

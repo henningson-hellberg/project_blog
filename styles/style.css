@@ -129,8 +129,16 @@ body {
   padding: 2em 3em 0 3em;
 }
 
-.posts-section .post__header {
+.posts-section .post__line {
   margin-bottom: 2em;
+}
+
+.posts-section .post__header {
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
 }
 
 .posts-section .post__header__title {
@@ -140,6 +148,8 @@ body {
 
 .posts-section .post__header__date {
   color: #456a68;
+  margin-left: auto;
+  padding-top: 10px;
 }
 
 .posts-section .post__text {
