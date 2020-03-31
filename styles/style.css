@@ -10,10 +10,34 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.main__hero {
+  background-image: url("../assets/hero_cut_new.jpg");
+  background-size: cover;
+  height: 670px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  border-bottom: 2px solid #27393c;
+}
+
 .main__hero__img {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.main__hero__heading {
+  font-family: 'Liu Jian Mao Cao', cursive;
+  font-size: 7em;
+  margin-bottom: 1em;
+  color: #132b35;
 }
 
 .main__content {
