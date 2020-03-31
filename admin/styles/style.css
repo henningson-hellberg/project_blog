@@ -1,6 +1,25 @@
-.header {
-  height: 90px;
+.help {
+  height: 70px;
+  width: 100px;
+  padding-top: 10px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: -10px;
+  margin-left: 90vw;
+  border-radius: 20%;
+  color: white;
   text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+.help a {
+  text-decoration: none;
+  color: white;
 }
 
 .button {
@@ -126,7 +145,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f9f9f9;
+  background-color: #ebe8e8;
+  height: 100vh;
   margin: auto;
   min-height: 800px;
 }
@@ -207,7 +227,7 @@
 
 /* CHECKED STYLES */
 [type="radio"]:checked + img {
-  outline: 5px solid rgba(11, 108, 235, 0.728);
+  outline: px solid rgba(11, 108, 235, 0.728);
 }
 
 img {
@@ -254,6 +274,10 @@ img {
   width: 100%;
 }
 
+.posts {
+  margin-top: 10em;
+}
+
 .posts table {
   border: none;
   text-align: center;
@@ -287,11 +311,5 @@ img {
 
 .posts__header {
   margin-bottom: 20px;
-}
-
-.footer {
-  text-align: center;
-  height: 200px;
-  border: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */
