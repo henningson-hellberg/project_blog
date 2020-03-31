@@ -4,7 +4,6 @@ function deleteTodo (id) {
   if(confirm("Are you sure yu want to delete this post?")==true) {
     window.location = `delete.php?id=${id}`;
   }
-
 }
 </script>
 
@@ -14,7 +13,6 @@ require_once 'functions.php';
 $sql = "SELECT * FROM blog_posts ORDER BY blog_posts.date DESC";
 $stmt = $db->prepare($sql);
 $stmt->execute();
-
 
 echo "<section class='admin_card posts'>";
 echo "<h2 class='posts__header'> Posts </h2>";
@@ -35,7 +33,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
   $published = htmlspecialchars($row['published']);
   $published == 0 ? $publishBtn = "<button class='button publish unpublished'> <a href='index.php?id=$id&published=1'>No </a></button>" : $publishBtn = "<button class='published button publish'> <a href='index.php?id=$id&published=0'>Yes </a></button>";
  
-
   echo "<tr class='posts__table'>
           <td>$id</td>
           <td>$publishBtn</td>

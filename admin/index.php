@@ -6,10 +6,6 @@ if (isset($_GET['id'])) {
 } else {
     require_once "create.php";
 }
-
-
 require_once "read.php";
-
-
 ?>
 
