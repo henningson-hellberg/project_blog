@@ -8,8 +8,8 @@
 
 body {
   background-image: url("../assets/paper.jpg");
-  background-size: cover;
   font-family: "Sen", sans-serif;
+  background-size: cover;
 }
 
 .main__hero {
