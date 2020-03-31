@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 
 
 require_once "read.php";
-require_once "footer.php";
+
 
 ?>
 
