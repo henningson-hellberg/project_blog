@@ -1,8 +1,10 @@
 <script>
+
 function deleteTodo (id) {
   if(confirm("Are you sure yu want to delete this post?")==true) {
     window.location = `delete.php?id=${id}`;
   }
+
 }
 </script>
 
@@ -41,7 +43,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
           <td>$text...</td>
           <td>$date</td>
           <td>
-          <button class='button edit'>
+          <button class='button edit' onclick='return removeHidden()'>
             <a href='index.php?id=$id'>Edit</a>
           </button>
           <button class='button abort' onclick='return deleteTodo(".$id.")'> Delete</button>

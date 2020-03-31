@@ -12,9 +12,11 @@
   cursor: pointer;
 
   a {
-    height: 100%;
+    min-height: 100%;
     color: white;
+
     text-decoration: none;
+    border: 1px solid black;
   }
 }
 
@@ -60,5 +62,19 @@
     height: 100%;
     color: black;
     text-decoration: none;
+  }
+}
+
+.img-selection__btn1 {
+  width: 80px;
+  margin-bottom: 8px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: rgba(184, 29, 29, 0.865);
   }
 }
