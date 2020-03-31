@@ -22,24 +22,5 @@
         width: 100%;
       }
     }
-    &__image {
-      .thumbnails {
-        max-width: 100px;
-      }
-      .img-selection {
-        &__radio {
-          // position: absolute;
-          // opacity: 0;
-          // width: 0;
-          // height: 0;
-        }
-        &__radio + &__btn {
-          cursor: pointer;
-        }
-        &__radio:checked + &__btn {
-          outline: 2px solid #f00;
-        }
-      }
-    }
-    }
   }
+}

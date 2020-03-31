@@ -24,12 +24,12 @@ if (isset($_GET['id'])) {
    $stmt->execute();
    // echo $activeImgId ? "hej" : "nej";
 
-   $radioImgs = "<div class='images hidden'>
-                     
+   $radioImgs = "<div class='hidden'>                   
                   <label class='img-selection'>
                      <input class='img-selection__radio' type='radio' id='no_img' name='image' value=''>
                      <div class='img-selection__btn img-selection__btn1 '>No image</div>
                   </label>
+                  <div class='hidden__images'>
                   ";
 
    if ($stmt->rowCount() !== 0) {
@@ -49,14 +49,14 @@ if (isset($_GET['id'])) {
                      </label>";
        endwhile;
    }
-      $radioImgs .= "</div>";
+      $radioImgs .= "</div></div>";
       echo $radioImgs;
 
 ?>
 
 <script>
       radios = document.querySelectorAll('.img-selection__radio')
-      images = document.querySelector('.images')
+      images = document.querySelector('.hidden')
       // radios[0].checked = true;
 
       const checkRadios = (radios) => {

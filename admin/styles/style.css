@@ -21,7 +21,6 @@
   min-height: 100%;
   color: white;
   text-decoration: none;
-  border: 1px solid black;
 }
 
 .abort:hover {
@@ -93,6 +92,27 @@
 
 .img-selection__btn1:hover {
   background-color: rgba(184, 29, 29, 0.865);
+}
+
+.img-selection {
+  height: 100%;
+  width: 100%;
+}
+
+.hidden__images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100px)[5];
+      grid-template-columns: repeat(5, 100px);
+  grid-auto-flow: row;
+  grid-auto-rows: 100px;
+  grid-gap: 15px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-bottom: 15px;
+  height: 140px;
+  overflow: scroll;
 }
 
 .admin {
@@ -187,7 +207,15 @@
 
 /* CHECKED STYLES */
 [type="radio"]:checked + img {
-  outline: 2px solid rgba(11, 108, 235, 0.728);
+  outline: 5px solid rgba(11, 108, 235, 0.728);
+}
+
+img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .admin__form {
@@ -224,18 +252,6 @@
 
 .admin__form__title input {
   width: 100%;
-}
-
-.admin__form__image .thumbnails {
-  max-width: 100px;
-}
-
-.admin__form__image .img-selection__radio + .admin__form__image .img-selection__btn {
-  cursor: pointer;
-}
-
-.admin__form__image .img-selection__radio:checked + .admin__form__image .img-selection__btn {
-  outline: 2px solid #f00;
 }
 
 .posts table {
