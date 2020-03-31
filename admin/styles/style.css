@@ -146,7 +146,6 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #ebe8e8;
-  height: 100vh;
   margin: auto;
   min-height: 800px;
 }
@@ -173,11 +172,12 @@
   border-radius: 5px;
   padding: 10px;
   background-color: white;
-  margin: 50px 10px;
+  margin: 0px 10px;
 }
 
 .upload {
   height: 60px;
+  margin-top: 20px;
 }
 
 .createUpload {
@@ -275,7 +275,7 @@ img {
 }
 
 .posts {
-  margin-top: 10em;
+  margin-top: 10vh;
 }
 
 .posts table {
