@@ -13,6 +13,7 @@ require_once "./admin/db.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./styles/style.css">
   <title>Lilla bloggen</title>
 </head>
@@ -27,7 +28,7 @@ require_once "./admin/db.php";
           <a href="#">Contact</a>
         </li>
         <li class="nav-list__item">
-          <a href="#">Login</a>
+          <a href="./admin/index.php">Login</a>
         </li>
       </ul>
     </nav>

@@ -6,9 +6,24 @@ body {
 
 .main {
   &__hero {
+    background-image: url("../assets/hero_cut_new.jpg") ;
+    background-size: cover;
+    height: 670px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-bottom: 2px solid #27393c;
+    
     &__img {
       max-width: 100%;
       object-fit: cover;
+    }
+    &__heading {
+      font-family: 'Liu Jian Mao Cao', cursive;
+      font-size: 7em;
+      margin-bottom: 1em;
+      color: #132b35;
     }
   }
   &__content {
