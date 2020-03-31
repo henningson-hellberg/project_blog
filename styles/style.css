@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Sen:400,700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +7,8 @@
 }
 
 body {
-  background: #63c88f24;
-  font-family: 'Poppins', sans-serif;
+  background-image: url("../assets/paper.jpg");
+  font-family: "Sen", sans-serif;
 }
 
 .main__hero__img {
@@ -92,12 +93,12 @@ body {
 
 .posts-section {
   min-width: 500px;
-  background: #ecebcb;
+  background: #fffff8;
   grid-row: span 3;
   border-radius: 5px;
   padding: 10px;
-  -webkit-box-shadow: 4px 3px 5px 2px #ababab;
-  box-shadow: 4px 3px 5px 2px #ababab;
+  -webkit-box-shadow: 4px 3px 5px 2px black;
+  box-shadow: 4px 3px 5px 2px black;
 }
 
 .posts-section .post {
@@ -152,14 +153,14 @@ body {
 }
 
 .asides {
-  background: #ecebcb;
+  background: #fffff8;
   padding: 2em 3em;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1, 2;
   border-radius: 5px;
-  -webkit-box-shadow: 4px 3px 5px 2px #464646;
-  box-shadow: 4px 3px 5px 2px #464646;
+  -webkit-box-shadow: 4px 3px 5px 2px black;
+  box-shadow: 4px 3px 5px 2px black;
 }
 
 footer {
