@@ -1,15 +1,23 @@
 body {
-  background: rgb(216, 216, 216);
+  background: #63c88f24;
   font-family: 'Poppins', sans-serif;
 }
 
-.main-content {
+.main {
+  &__hero {
+    &__img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
   max-width: 80vw;
   margin: 2em auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, auto) 2fr;
   gap: 20px; 
+  }
 }
 
 .image-wrapper {

@@ -1,5 +1,23 @@
 .top-header {
-  background: white;
+  background: #2a3e3f;
   text-align: center;
   padding: 1em 0;
+  color: white;
+  &__nav {
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      max-width: 26vw;
+      margin-left: auto;
+      margin-right: 5em;
+      &__item {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: #d07218;
+        }
+      }
+    }
+  }
 }
