@@ -1,5 +1,6 @@
 body {
   background-image: url("../assets/paper.jpg");
+  background-size: cover;
 
   font-family: "Sen", sans-serif;
 }
@@ -8,7 +9,7 @@ body {
   &__hero {
     background-image: url("../assets/hero_cut_new.jpg") ;
     background-size: cover;
-    height: 670px;
+    height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;
