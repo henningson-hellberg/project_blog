@@ -39,7 +39,6 @@ if (isset($_GET['published'])) {
     $stmt->execute();
     header("Location: index.php");
     exit;
-    // header('Location: index.php');
 }
 
 
@@ -95,9 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </button>
         </div>
       </div>
-
     </div>
     <input type="hidden" name="id" value="<?php echo $id; ?>">
   </form>
-  
 </div>
